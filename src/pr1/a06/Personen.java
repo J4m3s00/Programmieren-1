@@ -55,26 +55,14 @@ public class Personen {
 		PersonSet sportfreunde = getPersonsFrom("data/persons/sportfreunde.txt");
 		PersonSet kommilitonen = getPersonsFrom("data/persons/kommilitonen.txt");
 		
-		PersonSet sandk = new PersonSet();
+		PersonSet sandk = new PersonSet(sportfreunde);
+		sandk.retainAll(kommilitonen);
 		
-		for (Person sf : sportfreunde) {
-			if (kommilitonen.contains(sf))
-				sandk.add(sf);
-		}
+		PersonSet kbutnots = new PersonSet(kommilitonen);
+		kbutnots.removeAll(sportfreunde);
 		
-		PersonSet kbutnots = new PersonSet();
-		for (Person ko : kommilitonen) {
-			if (!sportfreunde.contains(ko))
-				kbutnots.add(ko);
-		}
-		
-		PersonSet tandk = new PersonSet();
-		for (Person p : persons) {
-			tandk.add(p);
-		}
-		for (Person p : kommilitonen) {
-			tandk.add(p);
-		}
+		PersonSet tandk = new PersonSet(persons);
+		tandk.addAll(kommilitonen);
 		
 		printPersons(sandk, "data/persons/SundK.txt");
 		out.println();
