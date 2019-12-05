@@ -20,7 +20,6 @@ public class TestSchachbrett {
 		else
 			Schachbrett.printSchachbrettReverse(out);
 		
-		out.flush();
 		out.close();
 		writer.close();
 	}

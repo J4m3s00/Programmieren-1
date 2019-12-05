@@ -25,7 +25,6 @@ public class Aufgabe03IO {
 			writer.printf("%8d", rand.nextInt(999999));
 		}
 		
-		writer.flush();
 		writer.close();
 		fileWriter.close();
 	}
@@ -48,7 +47,6 @@ public class Aufgabe03IO {
 			else 
 				writer.printf("%" + width + "f", rand.nextDouble());
 		}
-		writer.flush();
 		writer.close();
 		fileWriter.close();
 	}
