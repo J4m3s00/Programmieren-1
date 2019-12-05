@@ -16,7 +16,6 @@ public class Personen {
 		PrintWriter out = new PrintWriter(System.out, true);
 
 		aufgabeC(out);
-
 	}
 
 	private static void printPerson(schimkat.berlin.lernhilfe2019ws.objectPlay.Person person, PrintWriter out) {

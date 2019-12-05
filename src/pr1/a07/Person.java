@@ -13,6 +13,10 @@ public class Person {
 		this.yearOfBirth = yearOfBirth;
 	}
 	
+	public Person(Person p) {
+		this(p.firstname, p.lastname, p.yearOfBirth);
+	}
+	
 	public Person(schimkat.berlin.lernhilfe2019ws.objectPlay.Person copy) {
 		this(copy.getNachname(), copy.getNachname(), copy.getGeburtsjahr());
 	}
