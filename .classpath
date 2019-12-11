@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/schimkat-berlin-lernhilfe-2019ws-io.jar"/>
 	<classpathentry kind="lib" path="lib/schimkat-berlin-lernhilfe-2019ws-objectplay.jar"/>
+	<classpathentry kind="lib" path="lib/schimkat-berlin-lernhilfe-2019ws-graphics.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
