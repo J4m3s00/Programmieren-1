@@ -37,13 +37,14 @@ public class DirtyPainter2 extends Canvas implements Runnable {
 		requestFocusInWindow(); //Get the input events from the canvas. We get little bug when we dont do this
 		
 		fIsRunning = init();	//Init the painter
-		
-		
+	}
+	
+	public void show() {
 		///In this part we basically call the run method of our class. 
-		//We use the thread class to do this for us asynchronously. 
-		//So the rest of the program does not wait for the loop to finish. So it just runs all the time in the background. 
-		fLoopThread = new Thread(this, "loopThread");	//Create the draw loop. 
-		fLoopThread.start();	//Starts the drawloop
+				//We use the thread class to do this for us asynchronously. 
+				//So the rest of the program does not wait for the loop to finish. So it just runs all the time in the background. 
+				fLoopThread = new Thread(this, "loopThread");	//Create the draw loop. 
+				fLoopThread.start();	//Starts the drawloop
 	}
 
 	private boolean init() {
@@ -60,11 +61,20 @@ public class DirtyPainter2 extends Canvas implements Runnable {
 		long lastTime = System.nanoTime();
 		long now = 0;
 		double delta = 0;
+		double timer = 0.0;
+		int frames = 0;
+		int fps = 0;
 		
 		while (fIsRunning) {
 			now = System.nanoTime();
 			delta = (now  - lastTime) / 1000000000.0d;
 			lastTime = now;
+			timer += delta;
+			if (timer >= 1.0) {
+				fps = frames;
+				frames = 0;
+				timer -= 1.0;
+			}
 			
 			BufferStrategy bs = getBufferStrategy();
 			if (bs == null)
@@ -81,8 +91,14 @@ public class DirtyPainter2 extends Canvas implements Runnable {
 				d.draw(g2d, delta);
 			}
 			
+
+			g2d.setColor(Color.black);
+			g2d.drawString("Fps: " + fps, 24, 24);
+			g2d.drawString("Calculated FPS: " + 1.0 / delta, 24, 54);
+			
 			g2d.dispose();
 			bs.show();
+			frames++;
 		}
 	}
 

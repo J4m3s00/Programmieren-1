@@ -1,10 +1,11 @@
 package pr1.a09;
-
 import java.awt.Color;
 import java.awt.Point;
 import java.util.Random;
 
 import pr1.a08.Gitter;
+import pr1.a09f.Mond;
+import pr1.a09f.Raumsonde;
 import schimkat.myway.DirtyPainter2;
 
 public class Planetarium {
@@ -19,12 +20,21 @@ public class Planetarium {
 		dp2.add(gitter);
 
 		Stern sonne = new Stern(new Point(400, 400), 50);
-		Planet planet1 = new Planet(40, sonne, 100);
-		Planet planet2 = new Planet(24, sonne, 50);
+		Planet planet1 = new Planet(50, sonne, 250);
+		Mond mond1 = new Mond(6, planet1, 30);
+		Mond mond2 = new Mond(12, planet1, 44);
+		Planet planet2 = new Planet(30, sonne, 100);
 		
 		dp2.add(sonne);
 		dp2.add(planet1);
+		dp2.add(mond1);
+		dp2.add(mond2);
 		dp2.add(planet2);
+		
+		Raumsonde sonde = new Raumsonde(new Point(100, 50));
+		dp2.add(sonde);
+		
+		dp2.show();
 	}
 
 	private static void generateHimmelskörper(int count, DirtyPainter2 dp) {

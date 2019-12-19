@@ -19,7 +19,7 @@ public class Himmelskörper implements Drawable2, Drawable {
 	
 	public Himmelskörper(Point position, int radius) {
 		this.position = position;
-		this.radius = radius;
+		this.radius = radius;	
 	}
 	
 	public Himmelskörper(Himmelskörper copy) {
@@ -36,6 +36,14 @@ public class Himmelskörper implements Drawable2, Drawable {
 	@Override
 	public void draw(Graphics g) {
 		this.draw((Graphics2D) g, 0.0);
+	}
+	
+	public Point getPosition() {
+		return position;
+	}
+	
+	public int getRadius() {
+		return radius;
 	}
 	
 }
