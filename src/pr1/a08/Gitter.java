@@ -2,13 +2,11 @@ package pr1.a08;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import schimkat.berlin.lernhilfe2019ws.graphics.Drawable;
 import schimkat.myway.Drawable2;
 
-public class Gitter implements Drawable2, Drawable {
+public class Gitter implements Drawable2 {
 	public static final int PIXEL_WIDTH = 1000;
 	public static final int PIXEL_HEIGHT = 1000;
 	private final int AXIS_OFFSET_X = 0;
@@ -62,10 +60,5 @@ public class Gitter implements Drawable2, Drawable {
 	
 	public void setColor(Color color) {
 		this.color = color;
-	}
-
-	@Override
-	public void draw(Graphics g) {
-		this.draw((Graphics2D) g, 0.0);
 	}
 }

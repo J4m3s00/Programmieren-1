@@ -1,14 +1,12 @@
 package pr1.a09;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
-import schimkat.berlin.lernhilfe2019ws.graphics.Drawable;
 import schimkat.myway.Drawable2;
 
-public class Himmelskörper implements Drawable2, Drawable {
+public class Himmelskörper implements Drawable2 {
 
 	protected Point position;
 	protected int radius;
@@ -30,12 +28,6 @@ public class Himmelskörper implements Drawable2, Drawable {
 	public void draw(Graphics2D g, double delta) {
 		g.setColor(Color.GRAY);
 		g.fillOval(position.x -(radius / 2), position.y - (radius / 2), radius, radius);
-	}
-
-	
-	@Override
-	public void draw(Graphics g) {
-		this.draw((Graphics2D) g, 0.0);
 	}
 	
 	public Point getPosition() {
