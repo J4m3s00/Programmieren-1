@@ -37,6 +37,7 @@ public class Planetarium {
 		dp2.show();
 	}
 
+	@SuppressWarnings("unused")
 	private static void generateHimmelskörper(int count, DirtyPainter2 dp) {
 		Random rand = new Random();
 		for (int i = 0; i < count; i++) {
